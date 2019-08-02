@@ -1,0 +1,2 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_projectgi_projectgi,projectgi.projectgi,model_projectgi_projectgi,,1,0,0,0

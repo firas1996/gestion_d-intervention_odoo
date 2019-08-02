@@ -1,0 +1,34 @@
+ <odoo>
+    <data>
+        <!-- Add instructor field to existing view -->
+        <record model="ir.ui.view" id="project_task">
+            <field name="name">project heritage</field>
+            <field name="model">project.task</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='project_id']" position="after">
+                     <field name="instructor"/>
+              </xpath>
+
+              <xpath expr="//field[@name='tag_ids']" position="attributes">
+                  <attribute name="string">Tag</attribute>
+                  <attribute name="required">True</attribute>
+              </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_task_tree2">
+            <field name="name">project heritage</field>
+            <field name="model">project.task</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="project.view_task_tree2"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='project_id']" position="after">
+                     <field name="instructor"/>
+              </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
