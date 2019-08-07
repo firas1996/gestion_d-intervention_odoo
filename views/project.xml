@@ -7,13 +7,51 @@
             <field name="type">form</field>
             <field name="inherit_id" ref="project.view_task_form2"/>
             <field name="arch" type="xml">
-              <xpath expr="//field[@name='project_id']" position="after">
-                     <field name="instructor"/>
+
+              <xpath expr="//field[@name='project_id']" position="attributes">
+                  <attribute name="readonly">True</attribute>
               </xpath>
+
+              <xpath expr="//field[@name='user_id']" position="attributes">
+                  <attribute  name="required">True</attribute>
+              </xpath>
+
+              <xpath expr="//field[@name='partner_id']" position="attributes">
+                  <attribute name="required">True</attribute>
+              </xpath>
+
+              <xpath expr="//field[@name='date_deadline']" position="attributes">
+                 <attribute name="string"  >Date du travail</attribute>
+
+              </xpath>
+
+
+              <xpath expr="//field[@name='date_deadline']" position="before">
+                     <field name="date_import"></field>
+              </xpath>
+
+              <xpath expr="//field[@name='date_deadline']" position="attributes">
+                 <attribute name="string"  >Date du travail</attribute>
+              </xpath>
+
+
+              <xpath expr="//field[@name='date_deadline']" position="after">
+                     <field name="duree" widget="float_time"/>
+              </xpath>
+
+
 
               <xpath expr="//field[@name='tag_ids']" position="attributes">
                   <attribute name="string">Tag</attribute>
                   <attribute name="required">True</attribute>
+              </xpath>
+
+              <xpath expr="//field[@name='displayed_image_id']" position="attributes">
+                  <attribute name="invisible">True</attribute>
+              </xpath>
+
+              <xpath expr="//field[@name='sequence']" position="attributes">
+                  <attribute name="invisible">True</attribute>
               </xpath>
 
             </field>
@@ -26,7 +64,7 @@
             <field name="inherit_id" ref="project.view_task_tree2"/>
             <field name="arch" type="xml">
               <xpath expr="//field[@name='project_id']" position="after">
-                     <field name="instructor"/>
+                     <field name="date_deadline"/>
               </xpath>
             </field>
         </record>
