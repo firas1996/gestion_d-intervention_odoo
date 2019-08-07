@@ -11,5 +11,8 @@ class erreur(models.Model):
 
 class ProjectTask(models.Model):
     _inherit = 'project.task'
-    instructor = fields.Boolean("Instructor", default=False)
+
+    date_import = fields.Date(default=fields.Date.today,required=True)
+    date_deadline = fields.Date(required=True)
+    duree = fields.Float( compute="_compute_time")
 
