@@ -11,7 +11,7 @@
             - attendees registration
     """,
 
-    'author': "Mohamed Bejaoui",
+    'author': "Firas Hamila",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -29,6 +29,7 @@
         'template.xml',
         'views/index.xml',
         'views/project.xml',
+        'views/rapport.xml',
 
     ],
     # only loaded in demonstration mode

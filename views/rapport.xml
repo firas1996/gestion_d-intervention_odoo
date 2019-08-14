@@ -1,0 +1,18 @@
+ <odoo>
+     <record id="rapport_view" model="ir.ui.view">
+         <field name="name">Rapport</field>
+         <field name="model">projectgi.rapport</field>
+         <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                         <field name="name" />
+                         <field name="description" />
+                         <field name="num_rapport" />
+                         <field name="is_done" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+     </record>
+</odoo>

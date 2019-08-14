@@ -46,3 +46,17 @@ class ProjectTask(models.Model):
                 else:
                     td = dt.strptime( str(hour) + ":" + str(minutes)  + ":" +  str(seconds), '%H:%M:%S').time()
                     rec.duree = str(day) +" jours et " + str(td)
+
+
+class rapport(models.Model):
+    _name = 'projectgi.rapport'
+    name = fields.Char(string="Title", required=True)
+    description = fields.Text()
+    num_rapport = fields.Char("Rapport num")
+    is_done = fields.Boolean()
+    date_travail = fields.Datetime(string="Date debut")
+    date_deadline = fields.Datetime(string="Date fin")
+    duree = fields.Char(string="Durée", compute="_duration", store=True)
+
+
+

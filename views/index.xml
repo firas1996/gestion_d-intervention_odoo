@@ -55,6 +55,57 @@
 
         <!-- - -->
 
+        <record model="ir.ui.view" id="rapport_form_view">
+            <field name="name">rapport.form</field>
+            <field name="model">projectgi.rapport</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                            <page string="About">
+                                This is an example of notebooks
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+        <record model="ir.actions.act_window" id="rapport_list_action">
+            <field name="name">rapport</field>
+            <field name="res_model">projectgi.rapport</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first rapport
+                </p>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="rapport_search_view">
+            <field name="name">rapport.search</field>
+            <field name="model">projectgi.rapport</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
 
 
 
@@ -68,6 +119,8 @@
              its parent projectgi_menu and *after* its
              action course_list_action -->
         <menuitem id="erreurs_menu" name="Erreurs" parent="projectgi_menu"
+                  action="erreur_list_action"/>
+        <menuitem id="rapport_menu" name="Rapport" parent="projectgi_menu"
                   action="erreur_list_action"/>
         <!-- Full id location:
              action="projectgi.erreur_list_action"
